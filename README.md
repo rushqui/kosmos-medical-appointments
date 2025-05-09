@@ -15,5 +15,5 @@ Error
 <img width="569" alt="Screenshot 2025-05-09 at 4 09 02 p m" src="https://github.com/user-attachments/assets/5ff3cc44-435d-4e9b-a592-dcee9c76a595" />
 
 
-The appointments made are store correctly into the database
+The appointments made, stored correctly into the database
 <img width="802" alt="Screenshot 2025-05-09 at 4 12 14 p m" src="https://github.com/user-attachments/assets/fd4f5c5d-5784-4d76-a71f-d68b4a2042f2" />
