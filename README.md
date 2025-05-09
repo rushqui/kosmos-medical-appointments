@@ -1,4 +1,12 @@
-# kosmos-medical-appointments
+# kosmos-medical-appointments (Spring Boot)
+Author: Carlos Elias Rojas Aldana
+
+Made it with:
+- Spring Boot
+- H2 Database
+- Thymeleaf
+- Maven
+- Spring Data JPA
 
 In order to make an appointment go to:
 http://localhost:8080/appointment
