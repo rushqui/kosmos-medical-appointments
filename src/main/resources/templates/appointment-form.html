@@ -21,16 +21,16 @@
     <input type="datetime-local" th:field="*{date}" required/><br/>
 
     <label>Doctor:</label>
-    <select th:field="*{doctor}" required>
+    <select name="doctorId" required>
       <option th:each="doctor : ${doctors}"
-              th:value="${doctor}"
+              th:value="${doctor.id}"
               th:text="${doctor.name + ' ' + doctor.firstLastname + ' ' + doctor.secondLastname}"></option>
     </select><br/>
 
     <label>Consultorio:</label>
-    <select th:field="*{medicalClinic}" required>
+    <select name="clinicId" required>
       <option th:each="clinic : ${clinics}"
-              th:value="${clinic}"
+              th:value="${clinic.id}"
               th:text="'Núm: ' + ${clinic.number} + ' - Piso: ' + ${clinic.floor}"></option>
     </select><br/>
 

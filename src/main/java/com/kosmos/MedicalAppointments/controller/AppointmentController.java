@@ -9,10 +9,7 @@ import com.kosmos.MedicalAppointments.service.appointment.AppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -43,8 +40,16 @@ public class AppointmentController {
     }
 
     @PostMapping
-    public String createAppointment(@ModelAttribute Appointment appointment, Model model) {
+    public String createAppointment(@RequestParam("doctorId") Long doctorId,
+                                    @RequestParam("clinicId") Long clinicId,
+                                    @ModelAttribute Appointment appointment, Model model) {
         try {
+            Doctor doctor = doctorRepository.findById(doctorId).orElseThrow();
+            MedicalClinic clinic = medicalClinicRepository.findById(clinicId).orElseThrow();
+
+            appointment.setDoctor(doctor);
+            appointment.setMedicalClinic(clinic);
+
             appointmentService.createAppointment(appointment);
             model.addAttribute("successMessage", "Cita agendada exitosamente.");
         } catch (Exception e) {

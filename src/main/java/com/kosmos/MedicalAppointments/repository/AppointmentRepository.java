@@ -15,9 +15,9 @@ public interface AppointmentRepository extends JpaRepository<Appointment, Long> 
     boolean existsByMedicalClinicAndDate(MedicalClinic clinic, LocalDateTime date);
     boolean existsByDoctorAndDate(Doctor doctor, LocalDateTime date);
 
-    @Query("SELECT a FROM Appointment a WHERE a.patientName = :patientName AND DATE(a.date) = DATE(:date)")
+    @Query("SELECT a FROM Appointment a WHERE a.patientName = :patientName AND a.date = :date")
     List<Appointment> findByPatientNameAndDate(String patientName, LocalDateTime date);
 
-    @Query("SELECT COUNT(a) FROM Appointment a WHERE a.doctor = :doctor AND DATE(a.date) = DATE(:date)")
+    @Query("SELECT COUNT(a) FROM Appointment a WHERE a.doctor = :doctor AND a.date = :date")
     long countByDoctorAndDate(Doctor doctor, LocalDateTime date);
 }
