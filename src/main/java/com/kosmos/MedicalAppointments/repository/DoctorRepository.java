@@ -1,0 +1,8 @@
+package com.kosmos.MedicalAppointments.repository;
+
+import com.kosmos.MedicalAppointments.entity.Doctor;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DoctorRepository  extends JpaRepository<Doctor, Long> {
+
+}
